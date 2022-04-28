@@ -49,9 +49,34 @@ namespace ARM_Ded_3._0
             OleDbCommand command = new OleDbCommand(query, myConnection);
             command.ExecuteNonQuery();
             string Zakup1 = "INSERT INTO Отгрузка ([Код товара],[Наименование],[Количество],[Дата отгрузки],[Закупщик],[Статус]) VALUES(" + kod + ",'" + Name + "', '" + Kolvo + "','" + Time + "','" + Zakup + "','" + Status + "')";
+            OleDbCommand Zakupka = new OleDbCommand(Zakup1, myConnection);
+            Zakupka.ExecuteNonQuery();
             MessageBox.Show("Данные обновлены!");
-            OleDbCommand Zakup12 = new OleDbCommand(Zakup1, myConnection);
-            command.ExecuteNonQuery();
+            this.отгрузкаTableAdapter.Fill(this.aRMDataSet.Отгрузка);
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string Name = textBox4.Text;
+            string query = "SELECT [Код товара], [Наименование], [Количество], [Дата отгрузки], [Закупщик],[Статус] FROM Отгрузка WHERE [Дата Отгрузки] LIKE '%" + Name + "%' ";
+            OleDbDataAdapter command = new OleDbDataAdapter(query, myConnection);
+            DataTable dt = new DataTable();
+            command.Fill(dt);
+            dataGridView1.DataSource = dt;
+            myConnection.Close();
+            textBox4.Clear();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            myConnection = new OleDbConnection(connectString);
+            myConnection.Open();
+            dataGridView1.DataSource = отгрузкаBindingSource;
         }
     }
 }

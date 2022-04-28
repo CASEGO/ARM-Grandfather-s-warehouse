@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.товарыBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aRMDataSet = new ARM_Ded_3._0.ARMDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,19 +50,13 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.aRMDataSet = new ARM_Ded_3._0.ARMDataSet();
-            this.товарыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.товарыTableAdapter = new ARM_Ded_3._0.ARMDataSetTableAdapters.ТоварыTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.товарыBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aRMDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.товарыBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -73,6 +73,42 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(993, 501);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Код";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Название";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 400;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Кол-во";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Кол-во";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Поставщик";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Поставщик";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 300;
+            // 
+            // товарыBindingSource
+            // 
+            this.товарыBindingSource.DataMember = "Товары";
+            this.товарыBindingSource.DataSource = this.aRMDataSet;
+            // 
+            // aRMDataSet
+            // 
+            this.aRMDataSet.DataSetName = "ARMDataSet";
+            this.aRMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -212,46 +248,11 @@
             this.button6.TabIndex = 1;
             this.button6.Text = "Выход";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // aRMDataSet
-            // 
-            this.aRMDataSet.DataSetName = "ARMDataSet";
-            this.aRMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // товарыBindingSource
-            // 
-            this.товарыBindingSource.DataMember = "Товары";
-            this.товарыBindingSource.DataSource = this.aRMDataSet;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // товарыTableAdapter
             // 
             this.товарыTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Код";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Код";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Название";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 400;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Кол-во";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Кол-во";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Поставщик";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Поставщик";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 300;
             // 
             // WareHouse
             // 
@@ -268,12 +269,12 @@
             this.Activated += new System.EventHandler(this.WareHouse_Activated);
             this.Load += new System.EventHandler(this.WareHouse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.товарыBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRMDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aRMDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.товарыBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -44,7 +44,7 @@ namespace ARM_Ded_3._0
             command.Fill(dt);
             dataGridView1.DataSource = dt;
             myConnection.Close();
-            textBox1.Clear();
+            textBox4.Clear();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -71,6 +71,12 @@ namespace ARM_Ded_3._0
             OleDbCommand otchet1 = new OleDbCommand(otchet, myConnection);
             otchet1.ExecuteNonQuery();
             MessageBox.Show("Данные обновлены!");
+            this.поставкиTableAdapter.Fill(this.aRMDataSet.Поставки);
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox5.Clear();
+            
 
         }
     }

@@ -83,5 +83,10 @@ namespace ARM_Ded_3._0
         {
             this.товарыTableAdapter.Fill(this.aRMDataSet.Товары);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

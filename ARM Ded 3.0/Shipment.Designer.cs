@@ -36,6 +36,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,22 +48,20 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.aRMDataSet = new ARM_Ded_3._0.ARMDataSet();
-            this.отгрузкаBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.отгрузкаTableAdapter = new ARM_Ded_3._0.ARMDataSetTableAdapters.ОтгрузкаTableAdapter();
             this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.кодТовараDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.наименованиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датаОтгрузкиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.закупщикDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.отгрузкаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aRMDataSet = new ARM_Ded_3._0.ARMDataSet();
+            this.отгрузкаTableAdapter = new ARM_Ded_3._0.ARMDataSetTableAdapters.ОтгрузкаTableAdapter();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aRMDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.отгрузкаBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRMDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -111,6 +111,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "К списку";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -120,6 +121,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Найти отгрузку";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox1
             // 
@@ -140,6 +142,22 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Заполнение накладной на отгрузку";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(5, 209);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(347, 20);
+            this.textBox6.TabIndex = 20;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(294, 187);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Закупщик";
             // 
             // textBox5
             // 
@@ -232,20 +250,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(674, 530);
             this.dataGridView1.TabIndex = 4;
             // 
-            // aRMDataSet
-            // 
-            this.aRMDataSet.DataSetName = "ARMDataSet";
-            this.aRMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // отгрузкаBindingSource
-            // 
-            this.отгрузкаBindingSource.DataMember = "Отгрузка";
-            this.отгрузкаBindingSource.DataSource = this.aRMDataSet;
-            // 
-            // отгрузкаTableAdapter
-            // 
-            this.отгрузкаTableAdapter.ClearBeforeFill = true;
-            // 
             // кодDataGridViewTextBoxColumn
             // 
             this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
@@ -282,21 +286,19 @@
             this.закупщикDataGridViewTextBoxColumn.HeaderText = "Закупщик";
             this.закупщикDataGridViewTextBoxColumn.Name = "закупщикDataGridViewTextBoxColumn";
             // 
-            // textBox6
+            // отгрузкаBindingSource
             // 
-            this.textBox6.Location = new System.Drawing.Point(5, 209);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(347, 20);
-            this.textBox6.TabIndex = 20;
+            this.отгрузкаBindingSource.DataMember = "Отгрузка";
+            this.отгрузкаBindingSource.DataSource = this.aRMDataSet;
             // 
-            // label5
+            // aRMDataSet
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(294, 187);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Закупщик";
+            this.aRMDataSet.DataSetName = "ARMDataSet";
+            this.aRMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // отгрузкаTableAdapter
+            // 
+            this.отгрузкаTableAdapter.ClearBeforeFill = true;
             // 
             // Shipment
             // 
@@ -315,8 +317,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aRMDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.отгрузкаBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRMDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
