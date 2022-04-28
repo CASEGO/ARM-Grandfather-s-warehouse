@@ -77,5 +77,10 @@ namespace ARM_Ded_3._0
             this.товарыTableAdapter.Fill(this.aRMDataSet.Товары);
             textBox2.Clear();
         }
+
+        private void WareHouse_Activated(object sender, EventArgs e)
+        {
+            this.товарыTableAdapter.Fill(this.aRMDataSet.Товары);
+        }
     }
 }

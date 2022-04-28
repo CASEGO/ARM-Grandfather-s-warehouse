@@ -265,6 +265,7 @@
             this.Name = "WareHouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Склад";
+            this.Activated += new System.EventHandler(this.WareHouse_Activated);
             this.Load += new System.EventHandler(this.WareHouse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
