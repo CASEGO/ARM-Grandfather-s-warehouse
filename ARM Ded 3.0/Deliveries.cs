@@ -30,7 +30,6 @@ namespace ARM_Ded_3._0
         private void Deliveries_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "aRMDataSet.Поставки". При необходимости она может быть перемещена или удалена.
-            this.поставкиTableAdapter.Fill(this.aRMDataSet.Поставки);
 
         }
 
@@ -50,7 +49,7 @@ namespace ARM_Ded_3._0
         {
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
-            dataGridView1.DataSource = поставкиBindingSource;
+           // dataGridView1.DataSource = поставкиBindingSource;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,7 +69,6 @@ namespace ARM_Ded_3._0
             OleDbCommand otchet1 = new OleDbCommand(otchet, myConnection);
             otchet1.ExecuteNonQuery();
             MessageBox.Show("Данные обновлены!");
-            this.поставкиTableAdapter.Fill(this.aRMDataSet.Поставки);
 
         }
     }

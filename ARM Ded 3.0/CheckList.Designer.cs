@@ -31,16 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.aRMDataSet = new ARM_Ded_3._0.ARMDataSet();
             this.отчетBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.отчетTableAdapter = new ARM_Ded_3._0.ARMDataSetTableAdapters.ОтчетTableAdapter();
             this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.товарDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.поставщикDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.статусDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aRMDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.отчетBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,17 +69,13 @@
             // 
             // aRMDataSet
             // 
-            this.aRMDataSet.DataSetName = "ARMDataSet";
-            this.aRMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // отчетBindingSource
             // 
             this.отчетBindingSource.DataMember = "Отчет";
-            this.отчетBindingSource.DataSource = this.aRMDataSet;
             // 
             // отчетTableAdapter
             // 
-            this.отчетTableAdapter.ClearBeforeFill = true;
             // 
             // кодDataGridViewTextBoxColumn
             // 
@@ -125,7 +118,6 @@
             this.Text = "Отчет";
             this.Load += new System.EventHandler(this.CheckList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aRMDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.отчетBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -135,9 +127,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private ARMDataSet aRMDataSet;
         private System.Windows.Forms.BindingSource отчетBindingSource;
-        private ARMDataSetTableAdapters.ОтчетTableAdapter отчетTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn товарDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn датаDataGridViewTextBoxColumn;
