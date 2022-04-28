@@ -19,8 +19,8 @@ namespace ARM_Ded_3._0
         public WareHouse()
         {
             InitializeComponent();
-           // myConnection = new OleDbConnection(connectString);
-            //myConnection.Open();
+            myConnection = new OleDbConnection(connectString);
+            myConnection.Open();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -44,7 +44,8 @@ namespace ARM_Ded_3._0
         private void WareHouse_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "aRMDataSet.Товары". При необходимости она может быть перемещена или удалена.
-        //    this.товарыTableAdapter.Fill(this.aRMDataSet.Товары);
+            this.товарыTableAdapter.Fill(this.aRMDataSet.Товары);
+            
 
         }
 
@@ -64,7 +65,7 @@ namespace ARM_Ded_3._0
         {
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
-        //    dataGridView1.DataSource = товарыBindingSource;
+            dataGridView1.DataSource = товарыBindingSource;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -74,13 +75,13 @@ namespace ARM_Ded_3._0
             OleDbCommand command = new OleDbCommand(query, myConnection);
             command.ExecuteNonQuery();
             MessageBox.Show("Данные обновлены!");
-        //    this.товарыTableAdapter.Fill(this.aRMDataSet.Товары);
+            this.товарыTableAdapter.Fill(this.aRMDataSet.Товары);
             textBox2.Clear();
         }
 
         private void WareHouse_Activated(object sender, EventArgs e)
         {
-       //     this.товарыTableAdapter.Fill(this.aRMDataSet.Товары);
+            this.товарыTableAdapter.Fill(this.aRMDataSet.Товары);
         }
     }
 }
