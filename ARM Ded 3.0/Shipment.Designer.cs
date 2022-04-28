@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -35,19 +36,32 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.aRMDataSet = new ARM_Ded_3._0.ARMDataSet();
+            this.отгрузкаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.отгрузкаTableAdapter = new ARM_Ded_3._0.ARMDataSetTableAdapters.ОтгрузкаTableAdapter();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодТовараDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.наименованиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаОтгрузкиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.закупщикDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRMDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.отгрузкаBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -109,6 +123,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.button1);
@@ -125,23 +141,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Заполнение накладной на отгрузку";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 206);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(347, 36);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(674, 530);
-            this.dataGridView1.TabIndex = 4;
-            // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(6, 164);
@@ -152,11 +151,21 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(286, 148);
+            this.label6.Location = new System.Drawing.Point(271, 148);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Количество";
+            this.label6.Text = "Дата отгрузки";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 245);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(347, 36);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Добавить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox3
             // 
@@ -168,11 +177,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(315, 106);
+            this.label3.Location = new System.Drawing.Point(287, 106);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Товар";
+            this.label3.Text = "Количество";
             // 
             // textBox2
             // 
@@ -184,11 +193,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(320, 67);
+            this.label2.Location = new System.Drawing.Point(269, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Дата";
+            this.label2.Text = "Наименование";
             // 
             // textBox1
             // 
@@ -202,9 +211,92 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(288, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Поставщик";
+            this.label1.Text = "Код товара";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.кодТовараDataGridViewTextBoxColumn,
+            this.наименованиеDataGridViewTextBoxColumn,
+            this.количествоDataGridViewTextBoxColumn,
+            this.датаОтгрузкиDataGridViewTextBoxColumn,
+            this.закупщикDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.отгрузкаBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(674, 530);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // aRMDataSet
+            // 
+            this.aRMDataSet.DataSetName = "ARMDataSet";
+            this.aRMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // отгрузкаBindingSource
+            // 
+            this.отгрузкаBindingSource.DataMember = "Отгрузка";
+            this.отгрузкаBindingSource.DataSource = this.aRMDataSet;
+            // 
+            // отгрузкаTableAdapter
+            // 
+            this.отгрузкаTableAdapter.ClearBeforeFill = true;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            // 
+            // кодТовараDataGridViewTextBoxColumn
+            // 
+            this.кодТовараDataGridViewTextBoxColumn.DataPropertyName = "Код товара";
+            this.кодТовараDataGridViewTextBoxColumn.HeaderText = "Код товара";
+            this.кодТовараDataGridViewTextBoxColumn.Name = "кодТовараDataGridViewTextBoxColumn";
+            // 
+            // наименованиеDataGridViewTextBoxColumn
+            // 
+            this.наименованиеDataGridViewTextBoxColumn.DataPropertyName = "Наименование";
+            this.наименованиеDataGridViewTextBoxColumn.HeaderText = "Наименование";
+            this.наименованиеDataGridViewTextBoxColumn.Name = "наименованиеDataGridViewTextBoxColumn";
+            // 
+            // количествоDataGridViewTextBoxColumn
+            // 
+            this.количествоDataGridViewTextBoxColumn.DataPropertyName = "Количество";
+            this.количествоDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.количествоDataGridViewTextBoxColumn.Name = "количествоDataGridViewTextBoxColumn";
+            // 
+            // датаОтгрузкиDataGridViewTextBoxColumn
+            // 
+            this.датаОтгрузкиDataGridViewTextBoxColumn.DataPropertyName = "Дата Отгрузки";
+            this.датаОтгрузкиDataGridViewTextBoxColumn.HeaderText = "Дата Отгрузки";
+            this.датаОтгрузкиDataGridViewTextBoxColumn.Name = "датаОтгрузкиDataGridViewTextBoxColumn";
+            // 
+            // закупщикDataGridViewTextBoxColumn
+            // 
+            this.закупщикDataGridViewTextBoxColumn.DataPropertyName = "Закупщик";
+            this.закупщикDataGridViewTextBoxColumn.HeaderText = "Закупщик";
+            this.закупщикDataGridViewTextBoxColumn.Name = "закупщикDataGridViewTextBoxColumn";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(5, 209);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(347, 20);
+            this.textBox6.TabIndex = 20;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(294, 187);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Закупщик";
             // 
             // Shipment
             // 
@@ -217,11 +309,14 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Shipment";
             this.Text = "Отгрузка";
+            this.Load += new System.EventHandler(this.Shipment_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRMDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.отгрузкаBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,5 +340,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private ARMDataSet aRMDataSet;
+        private System.Windows.Forms.BindingSource отгрузкаBindingSource;
+        private ARMDataSetTableAdapters.ОтгрузкаTableAdapter отгрузкаTableAdapter;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодТовараDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn наименованиеDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количествоDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датаОтгрузкиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn закупщикDataGridViewTextBoxColumn;
     }
 }
