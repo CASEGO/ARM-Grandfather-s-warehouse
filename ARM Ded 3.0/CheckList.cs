@@ -21,5 +21,12 @@ namespace ARM_Ded_3._0
         {
             this.Close();
         }
+
+        private void CheckList_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aRMDataSet.Отчет". При необходимости она может быть перемещена или удалена.
+            this.отчетTableAdapter.Fill(this.aRMDataSet.Отчет);
+
+        }
     }
 }
